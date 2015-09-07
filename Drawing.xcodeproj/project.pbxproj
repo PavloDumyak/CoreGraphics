@@ -14,6 +14,7 @@
 		6D021AD01B9D93310069094C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D021ACF1B9D93310069094C /* Images.xcassets */; };
 		6D021AD31B9D93310069094C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D021AD11B9D93310069094C /* LaunchScreen.xib */; };
 		6D021ADF1B9D93310069094C /* DrawingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D021ADE1B9D93310069094C /* DrawingTests.m */; };
+		6D021AEA1B9D934D0069094C /* SandBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D021AE91B9D934D0069094C /* SandBox.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		6D021AD81B9D93310069094C /* DrawingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D021ADD1B9D93310069094C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D021ADE1B9D93310069094C /* DrawingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawingTests.m; sourceTree = "<group>"; };
+		6D021AE81B9D934D0069094C /* SandBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SandBox.h; sourceTree = "<group>"; };
+		6D021AE91B9D934D0069094C /* SandBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SandBox.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				6D021ACF1B9D93310069094C /* Images.xcassets */,
 				6D021AD11B9D93310069094C /* LaunchScreen.xib */,
 				6D021AC21B9D93310069094C /* Supporting Files */,
+				6D021AE81B9D934D0069094C /* SandBox.h */,
+				6D021AE91B9D934D0069094C /* SandBox.m */,
 			);
 			path = Drawing;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				6D021ACB1B9D93310069094C /* ViewController.m in Sources */,
 				6D021AC81B9D93310069094C /* AppDelegate.m in Sources */,
 				6D021AC51B9D93310069094C /* main.m in Sources */,
+				6D021AEA1B9D934D0069094C /* SandBox.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
