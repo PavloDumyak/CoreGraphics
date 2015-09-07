@@ -16,6 +16,64 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gu-GE-WEy">
+                                <rect key="frame" x="139" y="105" width="76" height="30"/>
+                                <state key="normal" title="Rectangle"/>
+                                <connections>
+                                    <action selector="toDraw:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hqY-I0-Jw8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TpH-53-7ST">
+                                <rect key="frame" x="223" y="105" width="66" height="30"/>
+                                <state key="normal" title="Romb"/>
+                                <connections>
+                                    <action selector="toDraw:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rhf-vu-HHa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pag-eF-QAF">
+                                <rect key="frame" x="51" y="143" width="66" height="30"/>
+                                <state key="normal" title="Circle"/>
+                                <connections>
+                                    <action selector="toDraw:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IVx-D5-48R"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wr-YN-B7Y">
+                                <rect key="frame" x="144" y="143" width="66" height="30"/>
+                                <state key="normal" title="Sixangle"/>
+                                <connections>
+                                    <action selector="toDraw:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OTp-OU-dH6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4z8-t7-bH1">
+                                <rect key="frame" x="223" y="143" width="66" height="30"/>
+                                <state key="normal" title="Trapeze"/>
+                                <connections>
+                                    <action selector="toDraw:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i9b-Yc-bnD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpp-IV-ozd">
+                                <rect key="frame" x="56" y="187" width="66" height="30"/>
+                                <state key="normal" title="Sinusoid"/>
+                                <connections>
+                                    <action selector="toDraw:" destination="BYZ-38-t0r" eventType="touchUpInside" id="drj-gg-bpL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysw-I0-tXZ">
+                                <rect key="frame" x="144" y="181" width="66" height="30"/>
+                                <state key="normal" title="Smile"/>
+                                <connections>
+                                    <action selector="toDraw:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rjK-pA-0SV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXA-dM-nI4">
+                                <rect key="frame" x="56" y="105" width="66" height="30"/>
+                                <state key="normal" title="Triangle"/>
+                                <connections>
+                                    <action selector="toDraw:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BP1-5g-y4d"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -23,6 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="242"/>
         </scene>
     </scenes>
 </document>

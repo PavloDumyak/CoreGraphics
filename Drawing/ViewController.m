@@ -16,14 +16,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    DrawFigure * DFObject = [[DrawFigure alloc]initWithFigure:1];
-    [self.view addSubview:DFObject];
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)toDraw:(id)sender {
+    DrawFigure * DFObject = [[DrawFigure alloc]initWithFigure:[sender tag]];
+    [self.view addSubview:DFObject];
+
 }
 
 @end

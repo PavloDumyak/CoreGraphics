@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #include "DrawFigure.h"
+
+ typedef enum myFigure{
+    Triangle,
+    Rectangle,
+    Romb,
+    Circle,
+    Sixangle,
+    Trapeze,
+    Smile,
+    Sinusoid
+}figure;
+
+
 @interface ViewController : UIViewController
 
 
