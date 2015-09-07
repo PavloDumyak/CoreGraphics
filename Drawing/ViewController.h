@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#include "DrawFigure.h"
 @interface ViewController : UIViewController
 
 
