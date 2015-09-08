@@ -10,7 +10,10 @@
 
 @interface DrawFigure : UIView
 @property (nonatomic,assign) NSInteger currentFigureType;
+@property (nonatomic,assign) NSInteger countForAngles;
+@property (nonatomic, assign)NSArray* pointsOfNAngle;
 -(id)initWithFigure: (NSInteger)figureType;
+-(id)initWithType: (NSInteger)countOfAngles;
 -(void)figureHub:(DrawFigure*)DFObject :(CGContextRef)currentContext :(CGRect)rect;
 -(void)setBackground: (CGContextRef)currentContext;
 -(void)drawTriangle: (CGContextRef)currentContext :(CGRect)rect;
@@ -22,5 +25,6 @@
 -(void)drawSmile: (CGContextRef)currentContext :(CGRect)rect;
 -(void)drawSinusoid :(CGContextRef)currentContext :(CGRect)rect;
 -(void)createButtonToReturn;
--(void)buttonPressed:(UIButton*)button;
+-(void)drawNAngle:(CGContextRef)currentContext :(CGRect)rect;
+-(NSArray*)setPointsForNAngles:(CGRect)rect;
 @end

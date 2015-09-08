@@ -28,5 +28,14 @@
     [self.view addSubview:DFObject];
 
 }
+- (IBAction)setNAngle:(id)sender {
+    
+    NSInteger tmp;
+    tmp = [self.inputData.text integerValue];
+    
+      DrawFigure * DFObject = [[DrawFigure alloc]initWithType:tmp];
+     [self.view addSubview:DFObject];
+}
+
 
 @end

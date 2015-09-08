@@ -67,10 +67,22 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXA-dM-nI4">
-                                <rect key="frame" x="56" y="105" width="66" height="30"/>
+                                <rect key="frame" x="51" y="105" width="66" height="30"/>
                                 <state key="normal" title="Triangle"/>
                                 <connections>
                                     <action selector="toDraw:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BP1-5g-y4d"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="we6-lZ-7g7">
+                                <rect key="frame" x="89" y="238" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" tag="89" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uuv-ag-HHM">
+                                <rect key="frame" x="79" y="276" width="66" height="30"/>
+                                <state key="normal" title="N-Angle"/>
+                                <connections>
+                                    <action selector="setNAngle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pgZ-C5-En0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -78,6 +90,9 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="480"/>
+                    <connections>
+                        <outlet property="inputData" destination="we6-lZ-7g7" id="RqR-c1-BAc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

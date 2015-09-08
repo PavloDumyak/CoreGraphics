@@ -20,6 +20,15 @@
     return self;
 }
 
+-(id)initWithType:(NSInteger)countOfAngles
+{
+    if(self==[super initWithFrame:CGRectMake(0, 0, 320, 320)])
+    {
+       self.countForAngles = countOfAngles;
+       self.currentFigureType = 89;
+    }
+    return self;
+}
 
 -(void)setBackground:(CGContextRef) currentContext
 {
@@ -163,7 +172,8 @@
         case 7:
             [self drawSmile:currentContext :rect];
             break;
-        case 8:
+        case 89:
+            [self drawNAngle:currentContext :rect];
             break;
     }
 }
@@ -179,19 +189,59 @@
 }
 
 
-
 -(void)iWantReturn:(UIButton*)button
 {
     [self removeFromSuperview];
 }
 
+-(NSArray*)setPointsForNAngles:(CGRect)rect
+{
+    CGPoint center = CGPointMake(rect.size.width / 2.0, rect.size.height / 2.0);
+    float radius = 0.90 * center.x;
+    NSMutableArray *result = [NSMutableArray array];
+    float angle = (2.0 * M_PI) / self.countForAngles;
+    float exteriorAngle = M_PI - angle;
+    float rotationDelta = angle - (0.5 * exteriorAngle);
+    for (int currentAngle = 0; currentAngle < self.countForAngles; currentAngle++) {
+        float newAngle = (angle * currentAngle) - rotationDelta;
+        float curX = cos(newAngle) * radius;
+        float curY = sin(newAngle) * radius;
+        [result addObject:[NSValue valueWithCGPoint:CGPointMake(center.x + curX,
+                                                                center.y + curY)]];
+    }
+    return result;
+}
+
+-(void)drawNAngle:(CGContextRef)currentContext :(CGRect)rect
+{
+    NSArray *arr =[self setPointsForNAngles:rect];
+    CGContextBeginPath (currentContext);
+    CGContextSetLineWidth(currentContext,5);
+    [[UIColor blueColor] setFill];
+    for(NSValue * point in arr) {
+        CGPoint val = [point CGPointValue];
+        if([arr indexOfObject:point]==0)
+        {
+            CGContextMoveToPoint (currentContext, val.x, val.y);
+        }
+        else
+        {
+            CGContextAddLineToPoint (currentContext, val.x, val.y);
+        }
+    }
+    
+    CGContextClosePath(currentContext);
+    CGContextFillPath(currentContext);
+    
+}
+
 - (void)drawRect:(CGRect)rect
 {
-    
-    [self createButtonToReturn];
     CGContextRef currentContext = UIGraphicsGetCurrentContext();
-    [self setBackground:currentContext];
+    //[self setBackground:currentContext];
     [self figureHub:self :currentContext :rect];
+    
+    
 }
 
 
