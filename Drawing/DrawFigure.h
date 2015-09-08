@@ -27,4 +27,5 @@
 -(void)createButtonToReturn;
 -(void)drawNAngle:(CGContextRef)currentContext :(CGRect)rect;
 -(NSArray*)setPointsForNAngles:(CGRect)rect;
+-(UIColor*)getRandomColor;
 @end

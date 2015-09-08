@@ -42,22 +42,16 @@
                                  CGPointMake(rect.size.width, rect.size.height),
                                  CGPointMake(rect.size.width/2, rect.size.height-rect.size.height)};
     CGContextBeginPath(currentContext);
-    CGContextSetRGBStrokeColor(currentContext, 32, 50, 45, 10);
-    CGContextSetFillColor(currentContext,CGColorGetComponents([UIColor blueColor].CGColor));
     CGContextSetLineWidth(currentContext, 4);
     CGContextMoveToPoint(currentContext, 0,0);
     CGContextAddLines(currentContext, arrayOfPoints, 3);
-    CGContextClosePath(currentContext);
-    CGContextFillPath(currentContext);
 }
 
 
 -(void)drawRectangle:(CGContextRef)currentContext :(CGRect)rect
 {
     CGContextBeginPath(currentContext);
-    CGContextSetFillColor(currentContext,CGColorGetComponents([UIColor blueColor].CGColor));
     CGContextAddRect(currentContext, rect);
-    CGContextFillPath(currentContext);
 }
 
 -(void)drawRomb:(CGContextRef)currentContext :(CGRect)rect
@@ -67,19 +61,15 @@
                                  CGPointMake(rect.size.width/2, rect.size.height),
                                  CGPointMake(rect.size.width-rect.size.width, rect.size.height/2)};
     CGContextBeginPath(currentContext);
-    CGContextSetFillColor(currentContext,CGColorGetComponents([UIColor blueColor].CGColor));
     CGContextMoveToPoint(currentContext, 0,0);
     CGContextAddLines(currentContext, arrayOfPoints, 4);
-    CGContextFillPath(currentContext);
 }
 
 -(void)drawCircle:(CGContextRef)currentContext :(CGRect)rect
 {
     CGContextBeginPath(currentContext);
-    CGContextSetFillColor(currentContext,CGColorGetComponents([UIColor blueColor].CGColor));
     CGContextSetLineWidth(currentContext, 3.0);
     CGContextFillEllipseInRect(currentContext, rect);
-    CGContextFillPath(currentContext);
 }
 
 -(void)drawSixangle:(CGContextRef)currentContext :(CGRect)rect
@@ -91,10 +81,7 @@
                                  CGPointMake(rect.size.width-rect.size.width+60, rect.size.height),
                                  CGPointMake(rect.size.width- rect.size.width ,rect.size.height/2)};
     CGContextBeginPath(currentContext);
-    CGContextSetFillColor(currentContext,CGColorGetComponents([UIColor blueColor].CGColor));
     CGContextAddLines(currentContext, arrayOfPoints, 6);
-    CGContextClosePath(currentContext);
-    CGContextFillPath(currentContext);
 }
 
 -(void)drawTrapeze:(CGContextRef)currentContext :(CGRect)rect
@@ -104,18 +91,13 @@
                                  CGPointMake(rect.size.width, rect.size.height),
                                  CGPointMake(rect.size.width-rect.size.width ,rect.size.height)};
     CGContextBeginPath(currentContext);
-    CGContextSetFillColor(currentContext,CGColorGetComponents([UIColor blueColor].CGColor));
     CGContextAddLines(currentContext, arrayOfPoints, 4);
-    CGContextClosePath(currentContext);
-    CGContextFillPath(currentContext);
 }
 
 -(void)drawSmile:(CGContextRef)currentContext :(CGRect)rect
 {
     CGContextSetLineWidth(currentContext, 3);
-    CGContextSetFillColor(currentContext,CGColorGetComponents([UIColor blueColor].CGColor));
     CGContextBeginPath(currentContext);
-    CGContextSetRGBStrokeColor(currentContext, 32, 50, 45, 10);
     CGContextAddArc(currentContext, 100, 100, 10, 36, 360, 0);
     CGContextFillPath(currentContext);
     CGContextAddArc(currentContext, 150, 100, 10, 36, 360, 0);
@@ -217,7 +199,6 @@
     NSArray *arr =[self setPointsForNAngles:rect];
     CGContextBeginPath (currentContext);
     CGContextSetLineWidth(currentContext,5);
-    [[UIColor blueColor] setFill];
     for(NSValue * point in arr) {
         CGPoint val = [point CGPointValue];
         if([arr indexOfObject:point]==0)
@@ -229,18 +210,39 @@
             CGContextAddLineToPoint (currentContext, val.x, val.y);
         }
     }
-    
-    CGContextClosePath(currentContext);
-    CGContextFillPath(currentContext);
-    
+
+}
+
+-(UIColor*)getRandomColor
+{
+    UIColor* currentColor = [UIColor alloc];
+    int randomRed = random()%10;
+    int randomGreen = random()%10;
+    int randomBlue = random()%10;
+    NSLog(@"red%f  green%i   blue%i",0.1*randomRed,randomGreen,randomBlue);
+    currentColor = [UIColor colorWithRed:randomRed*0.1
+                                   green:randomGreen*0.1
+                                    blue:randomBlue*0.1
+                                   alpha:1.0f];
+    return currentColor;
 }
 
 - (void)drawRect:(CGRect)rect
 {
     CGContextRef currentContext = UIGraphicsGetCurrentContext();
-    //[self setBackground:currentContext];
+    [[self getRandomColor] setFill];
     [self figureHub:self :currentContext :rect];
+    CGContextRotateCTM(currentContext,1);
     
+    int angle = -200 *M_PI/180;
+    
+    // rotate
+   CGContextRotateCTM(currentContext, angle);
+    
+    CGContextClosePath(currentContext);
+    
+    CGContextFillPath(currentContext);
+    [self createButtonToReturn];
     
 }
 
