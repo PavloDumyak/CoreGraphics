@@ -8,21 +8,40 @@
 
 #import "DrawFigure.h"
 
+
+@interface DrawFigure ()
+- (void)figureHub:(DrawFigure*)DFObject :(CGContextRef)currentContext :(CGRect)rect;
+- (void)setBackground: (CGContextRef)currentContext;
+- (void)drawTriangle: (CGContextRef)currentContext :(CGRect)rect;
+- (void)drawRectangle: (CGContextRef)currentContext :(CGRect)rect;
+- (void)drawRomb: (CGContextRef)currentContext :(CGRect)rect;
+- (void)drawCircle: (CGContextRef)currentContext :(CGRect)rect;
+- (void)drawSixangle: (CGContextRef)currentContext :(CGRect)rect;
+- (void)drawTrapeze: (CGContextRef)currentContext: (CGRect)rect;
+- (void)drawSmile: (CGContextRef)currentContext :(CGRect)rect;
+- (void)drawSinusoid :(CGContextRef)currentContext :(CGRect)rect;
+- (void)createButtonToReturn;
+- (void)drawNAngle:(CGContextRef)currentContext :(CGRect)rect;
+- (NSArray*)setPointsForNAngles:(CGRect)rect;
+- (UIColor*)getRandomColor;
+@end
+
+
 @implementation DrawFigure
 
 
--(id)initWithFigure:(NSInteger)figureType
+- (id)initWithFigure:(NSInteger)figureType :(CGRect)currentRect
 {
-    if (self = [super initWithFrame:CGRectMake(0, 0, 320, 320)])
+    if (self = [super initWithFrame:currentRect])
     {
          self.currentFigureType = figureType;
     }
     return self;
 }
 
--(id)initWithType:(NSInteger)countOfAngles
+- (id)initWithType:(NSInteger)countOfAngles :(CGRect)currentRect
 {
-    if(self==[super initWithFrame:CGRectMake(0, 0, 320, 320)])
+    if(self==[super initWithFrame:currentRect])
     {
        self.countForAngles = countOfAngles;
        self.currentFigureType = 89;
@@ -30,13 +49,13 @@
     return self;
 }
 
--(void)setBackground:(CGContextRef) currentContext
+- (void)setBackground:(CGContextRef) currentContext
 {
     CGContextSetRGBFillColor(currentContext, 0,0,0,10);
     CGContextFillRect(currentContext, CGRectMake(0, 0, 320, 320));
 }
 
--(void)drawTriangle:(CGContextRef)currentContext :(CGRect)rect
+- (void)drawTriangle:(CGContextRef)currentContext :(CGRect)rect
 {
     CGPoint arrayOfPoints[3] = { CGPointMake(rect.size.width-rect.size.width, rect.size.height),
                                  CGPointMake(rect.size.width, rect.size.height),
@@ -48,13 +67,13 @@
 }
 
 
--(void)drawRectangle:(CGContextRef)currentContext :(CGRect)rect
+- (void)drawRectangle:(CGContextRef)currentContext :(CGRect)rect
 {
     CGContextBeginPath(currentContext);
     CGContextAddRect(currentContext, rect);
 }
 
--(void)drawRomb:(CGContextRef)currentContext :(CGRect)rect
+- (void)drawRomb:(CGContextRef)currentContext :(CGRect)rect
 {
     CGPoint arrayOfPoints[4] = { CGPointMake(rect.size.width/2, rect.size.height-rect.size.height),
                                  CGPointMake(rect.size.width, rect.size.height/2),
@@ -65,14 +84,14 @@
     CGContextAddLines(currentContext, arrayOfPoints, 4);
 }
 
--(void)drawCircle:(CGContextRef)currentContext :(CGRect)rect
+- (void)drawCircle:(CGContextRef)currentContext :(CGRect)rect
 {
     CGContextBeginPath(currentContext);
     CGContextSetLineWidth(currentContext, 3.0);
     CGContextFillEllipseInRect(currentContext, rect);
 }
 
--(void)drawSixangle:(CGContextRef)currentContext :(CGRect)rect
+- (void)drawSixangle:(CGContextRef)currentContext :(CGRect)rect
 {
     CGPoint arrayOfPoints[6] = { CGPointMake(rect.size.width-rect.size.width+60, rect.size.height-rect.size.height),
                                  CGPointMake(rect.size.width-60, rect.size.height-rect.size.height),
@@ -84,7 +103,7 @@
     CGContextAddLines(currentContext, arrayOfPoints, 6);
 }
 
--(void)drawTrapeze:(CGContextRef)currentContext :(CGRect)rect
+- (void)drawTrapeze:(CGContextRef)currentContext :(CGRect)rect
 {
     CGPoint arrayOfPoints[4] = { CGPointMake(rect.size.width-rect.size.width+60, rect.size.height-rect.size.height),
                                  CGPointMake(rect.size.width-60, rect.size.height-rect.size.height),
@@ -94,7 +113,7 @@
     CGContextAddLines(currentContext, arrayOfPoints, 4);
 }
 
--(void)drawSmile:(CGContextRef)currentContext :(CGRect)rect
+- (void)drawSmile:(CGContextRef)currentContext :(CGRect)rect
 {
     CGContextSetLineWidth(currentContext, 3);
     CGContextBeginPath(currentContext);
@@ -108,8 +127,9 @@
     CGContextStrokePath(currentContext);
 }
 
--(void)drawSinusoid:(CGContextRef)currentContext :(CGRect)rect
-{CGContextSetRGBStrokeColor(currentContext, 32, 50, 45, 10);
+- (void)drawSinusoid:(CGContextRef)currentContext :(CGRect)rect
+{
+    CGContextSetRGBStrokeColor(currentContext, 32, 50, 45, 10);
     int y;
     for(int x=rect.origin.x; x < rect.size.width; x++)
     {
@@ -118,15 +138,15 @@
         {
             CGContextMoveToPoint(currentContext, x, y);
         }
-        else {
-            
+        else
+        {
         CGContextAddLineToPoint(currentContext, x, y);
         }
     }
     CGContextStrokePath(currentContext);
 }
 
--(void)figureHub:(DrawFigure *)DFObject :(CGContextRef)currentContext :(CGRect)rect
+- (void)figureHub:(DrawFigure *)DFObject :(CGContextRef)currentContext :(CGRect)rect
 {
     switch(DFObject.currentFigureType)
     {
@@ -160,7 +180,7 @@
     }
 }
 
--(void)createButtonToReturn
+- (void)createButtonToReturn
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
     [button setTitle:@"Return:" forState:UIControlStateNormal];
@@ -171,12 +191,12 @@
 }
 
 
--(void)iWantReturn:(UIButton*)button
+- (void)iWantReturn:(UIButton*)button
 {
     [self removeFromSuperview];
 }
 
--(NSArray*)setPointsForNAngles:(CGRect)rect
+- (NSArray*)setPointsForNAngles:(CGRect)rect
 {
     CGPoint center = CGPointMake(rect.size.width / 2.0, rect.size.height / 2.0);
     float radius = 0.90 * center.x;
@@ -194,7 +214,7 @@
     return result;
 }
 
--(void)drawNAngle:(CGContextRef)currentContext :(CGRect)rect
+- (void)drawNAngle:(CGContextRef)currentContext :(CGRect)rect
 {
     NSArray *arr =[self setPointsForNAngles:rect];
     CGContextBeginPath (currentContext);
@@ -213,7 +233,7 @@
 
 }
 
--(UIColor*)getRandomColor
+- (UIColor*)getRandomColor
 {
     UIColor* currentColor = [UIColor alloc];
     int randomRed = random()%10;

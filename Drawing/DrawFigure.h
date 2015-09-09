@@ -12,20 +12,6 @@
 @property (nonatomic,assign) NSInteger currentFigureType;
 @property (nonatomic,assign) NSInteger countForAngles;
 @property (nonatomic, assign)NSArray* pointsOfNAngle;
--(id)initWithFigure: (NSInteger)figureType;
--(id)initWithType: (NSInteger)countOfAngles;
--(void)figureHub:(DrawFigure*)DFObject :(CGContextRef)currentContext :(CGRect)rect;
--(void)setBackground: (CGContextRef)currentContext;
--(void)drawTriangle: (CGContextRef)currentContext :(CGRect)rect;
--(void)drawRectangle: (CGContextRef)currentContext :(CGRect)rect;
--(void)drawRomb: (CGContextRef)currentContext :(CGRect)rect;
--(void)drawCircle: (CGContextRef)currentContext :(CGRect)rect;
--(void)drawSixangle: (CGContextRef)currentContext :(CGRect)rect;
--(void)drawTrapeze: (CGContextRef)currentContext: (CGRect)rect;
--(void)drawSmile: (CGContextRef)currentContext :(CGRect)rect;
--(void)drawSinusoid :(CGContextRef)currentContext :(CGRect)rect;
--(void)createButtonToReturn;
--(void)drawNAngle:(CGContextRef)currentContext :(CGRect)rect;
--(NSArray*)setPointsForNAngles:(CGRect)rect;
--(UIColor*)getRandomColor;
+- (id)initWithFigure: (NSInteger)figureType :(CGRect)currentRect;
+- (id)initWithType: (NSInteger)countOfAngles :(CGRect)currentRect;
 @end

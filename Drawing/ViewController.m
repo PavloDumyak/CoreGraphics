@@ -14,27 +14,27 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-- (IBAction)toDraw:(id)sender {
-    DrawFigure * DFObject = [[DrawFigure alloc]initWithFigure:[sender tag]];
-    [self.view addSubview:DFObject];
 
+- (IBAction)toDraw:(id)sender {
+    DrawFigure * DFObject = [[DrawFigure alloc]initWithFigure:[sender tag] :CGRectMake(0, 0, 320, 320)];
+    [self.view addSubview:DFObject];
 }
-- (IBAction)setNAngle:(id)sender {
-    
+
+- (IBAction)setNAngle:(id)sender
+{
     NSInteger tmp;
     tmp = [self.inputData.text integerValue];
-    
-      DrawFigure * DFObject = [[DrawFigure alloc]initWithType:tmp];
-     [self.view addSubview:DFObject];
+    DrawFigure * DFObject = [[DrawFigure alloc]initWithType:tmp :CGRectMake(0, 0, 320, 320)];
+    [self.view addSubview:DFObject];
 }
 
 
