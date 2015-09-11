@@ -32,6 +32,16 @@
 
 - (id)initWithFigure:(NSInteger)figureType :(CGRect)currentRect
 {
+  
+    UISwipeGestureRecognizer *currentSwipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipe:)];
+    currentSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self addGestureRecognizer:currentSwipe];
+    
+    UIPanGestureRecognizer *currentPan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(handlePan:)];
+    [self addGestureRecognizer:currentPan];
+    
+    [self setLastLocation:currentRect.origin];
+   
     if (self = [super initWithFrame:currentRect])
     {
          self.currentFigureType = figureType;
@@ -180,21 +190,7 @@
     }
 }
 
-- (void)createButtonToReturn
-{
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-    [button setTitle:@"Return:" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(iWantReturn:) forControlEvents:UIControlEventTouchUpInside];
-    button.frame = CGRectMake(0, 0, 100, 30);
-    button.backgroundColor = [UIColor whiteColor];
-    [self addSubview:button];
-}
 
-
-- (void)iWantReturn:(UIButton*)button
-{
-    [self removeFromSuperview];
-}
 
 - (NSArray*)setPointsForNAngles:(CGRect)rect
 {
@@ -247,6 +243,30 @@
     return currentColor;
 }
 
+
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.superview bringSubviewToFront:self];
+    _lastLocation = self.center;
+}
+
+- (void) handlePan: (UIPanGestureRecognizer *) newPan
+{
+
+    CGPoint translation = [newPan translationInView:self.superview];
+    self.center = CGPointMake(_lastLocation.x + translation.x,
+                             _lastLocation.y + translation.y);
+  
+}
+
+- (void) handleSwipe: (UIPanGestureRecognizer *) newSwipe
+{
+    [self removeFromSuperview];
+
+    
+}
+
+
 - (void)drawRect:(CGRect)rect
 {
     CGContextRef currentContext = UIGraphicsGetCurrentContext();
@@ -262,7 +282,7 @@
     CGContextClosePath(currentContext);
     
     CGContextFillPath(currentContext);
-    [self createButtonToReturn];
+   
     
 }
 

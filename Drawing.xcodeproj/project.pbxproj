@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		6D021AC51B9D93310069094C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D021AC41B9D93310069094C /* main.m */; };
 		6D021AC81B9D93310069094C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D021AC71B9D93310069094C /* AppDelegate.m */; };
-		6D021ACB1B9D93310069094C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D021ACA1B9D93310069094C /* ViewController.m */; };
 		6D021ACE1B9D93310069094C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D021ACC1B9D93310069094C /* Main.storyboard */; };
 		6D021AD01B9D93310069094C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D021ACF1B9D93310069094C /* Images.xcassets */; };
 		6D021AD31B9D93310069094C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D021AD11B9D93310069094C /* LaunchScreen.xib */; };
 		6D021ADF1B9D93310069094C /* DrawingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D021ADE1B9D93310069094C /* DrawingTests.m */; };
+		848857611BA31744008FC036 /* FigureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848857601BA31744008FC036 /* FigureController.m */; };
+		848857631BA31B24008FC036 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848857621BA31B24008FC036 /* ViewController.m */; };
 		84EBFC1B1B9DCFBC0072395C /* DrawFigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBFC1A1B9DCFBC0072395C /* DrawFigure.m */; };
 /* End PBXBuildFile section */
 
@@ -34,13 +35,15 @@
 		6D021AC61B9D93310069094C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6D021AC71B9D93310069094C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6D021AC91B9D93310069094C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6D021ACA1B9D93310069094C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6D021ACD1B9D93310069094C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D021ACF1B9D93310069094C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6D021AD21B9D93310069094C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6D021AD81B9D93310069094C /* DrawingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D021ADD1B9D93310069094C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D021ADE1B9D93310069094C /* DrawingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawingTests.m; sourceTree = "<group>"; };
+		8488575F1BA31744008FC036 /* FigureController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FigureController.h; sourceTree = "<group>"; };
+		848857601BA31744008FC036 /* FigureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FigureController.m; sourceTree = "<group>"; };
+		848857621BA31B24008FC036 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		84EBFC191B9DCFBC0072395C /* DrawFigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawFigure.h; sourceTree = "<group>"; };
 		84EBFC1A1B9DCFBC0072395C /* DrawFigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawFigure.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,7 +90,7 @@
 				6D021AC61B9D93310069094C /* AppDelegate.h */,
 				6D021AC71B9D93310069094C /* AppDelegate.m */,
 				6D021AC91B9D93310069094C /* ViewController.h */,
-				6D021ACA1B9D93310069094C /* ViewController.m */,
+				848857621BA31B24008FC036 /* ViewController.m */,
 				6D021ACC1B9D93310069094C /* Main.storyboard */,
 				6D021ACF1B9D93310069094C /* Images.xcassets */,
 				6D021AD11B9D93310069094C /* LaunchScreen.xib */,
@@ -103,6 +106,8 @@
 				6D021AC41B9D93310069094C /* main.m */,
 				84EBFC191B9DCFBC0072395C /* DrawFigure.h */,
 				84EBFC1A1B9DCFBC0072395C /* DrawFigure.m */,
+				8488575F1BA31744008FC036 /* FigureController.h */,
+				848857601BA31744008FC036 /* FigureController.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -224,10 +229,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D021ACB1B9D93310069094C /* ViewController.m in Sources */,
 				6D021AC81B9D93310069094C /* AppDelegate.m in Sources */,
 				6D021AC51B9D93310069094C /* main.m in Sources */,
 				84EBFC1B1B9DCFBC0072395C /* DrawFigure.m in Sources */,
+				848857631BA31B24008FC036 /* ViewController.m in Sources */,
+				848857611BA31744008FC036 /* FigureController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,9 +363,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Drawing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -368,9 +376,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Drawing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -387,6 +397,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = DrawingTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -403,6 +414,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = DrawingTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

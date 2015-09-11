@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface DrawFigure : UIView
+@property CGPoint lastLocation;
 @property (nonatomic,assign) NSInteger currentFigureType;
 @property (nonatomic,assign) NSInteger countForAngles;
 @property (nonatomic, assign)NSArray* pointsOfNAngle;

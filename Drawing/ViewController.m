@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "FigureController.h"
 @interface ViewController ()
 
 @end
@@ -17,25 +17,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    FigureController* FCObject = [FigureController figureControllerSingleton];
+    FCObject.generalArrayOfFigure = [[NSMutableArray alloc]initWithCapacity:10];
+    [FCObject setGeneralArray];
+    [FCObject addViewToMainDisplay:self.view];
+    
+    
+   
+
 }
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 }
-
-- (IBAction)toDraw:(id)sender {
-    DrawFigure * DFObject = [[DrawFigure alloc]initWithFigure:[sender tag] :CGRectMake(0, 0, 320, 320)];
-    [self.view addSubview:DFObject];
-}
-
-- (IBAction)setNAngle:(id)sender
-{
-    NSInteger tmp;
-    tmp = [self.inputData.text integerValue];
-    DrawFigure * DFObject = [[DrawFigure alloc]initWithType:tmp :CGRectMake(0, 0, 320, 320)];
-    [self.view addSubview:DFObject];
-}
-
 
 @end

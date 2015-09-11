@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#include "DrawFigure.h"
+#import "FigureController.h"
 
  typedef enum myFigure{
     Triangle,
@@ -22,7 +22,7 @@
 
 
 @interface ViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextField *inputData;
+
 
 
 @end
