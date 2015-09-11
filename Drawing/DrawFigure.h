@@ -13,6 +13,7 @@
 @property (nonatomic,assign) NSInteger currentFigureType;
 @property (nonatomic,assign) NSInteger countForAngles;
 @property (nonatomic, assign)NSArray* pointsOfNAngle;
+@property CGRect basicRect;
 - (id)initWithFigure: (NSInteger)figureType :(CGRect)currentRect;
 - (id)initWithType: (NSInteger)countOfAngles :(CGRect)currentRect;
 @end

@@ -36,11 +36,10 @@
     UISwipeGestureRecognizer *currentSwipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipe:)];
     currentSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
     [self addGestureRecognizer:currentSwipe];
-    
     UIPanGestureRecognizer *currentPan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(handlePan:)];
     [self addGestureRecognizer:currentPan];
-    
     [self setLastLocation:currentRect.origin];
+    [self setBasicRect:currentRect];
    
     if (self = [super initWithFrame:currentRect])
     {
@@ -247,23 +246,40 @@
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self.superview bringSubviewToFront:self];
-    _lastLocation = self.center;
+    CGRect frameRect = self.frame;
+    frameRect.size.width = 200;
+    frameRect.size.height= 200;
+    self.frame = frameRect;
+    
 }
 
-- (void) handlePan: (UIPanGestureRecognizer *) newPan
-{
 
+
+- (void)handlePan:(UIPanGestureRecognizer *)newPan
+{
+    
     CGPoint translation = [newPan translationInView:self.superview];
     self.center = CGPointMake(_lastLocation.x + translation.x,
                              _lastLocation.y + translation.y);
-  
+    
+     if(newPan.state == UIGestureRecognizerStateEnded)
+     {
+         _lastLocation = self.center;
+         CGRect frameRect = _basicRect;
+         frameRect.origin.x= self.frame.origin.x+translation.x;
+         frameRect.origin.y=self.frame.origin.y+translation.y;
+         self.frame = frameRect;
+     }
+    
 }
 
-- (void) handleSwipe: (UIPanGestureRecognizer *) newSwipe
+
+
+- (void)handleSwipe:(UIPanGestureRecognizer*)newSwipe
 {
+    //неробоче, треба спершу пан вимикати
     [self removeFromSuperview];
 
-    
 }
 
 
