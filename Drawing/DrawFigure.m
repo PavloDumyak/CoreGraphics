@@ -32,7 +32,7 @@
 
 - (id)initWithFigure:(NSInteger)figureType :(CGRect)currentRect
 {
-  
+  /*
     UISwipeGestureRecognizer *currentSwipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipe:)];
     currentSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
     [self addGestureRecognizer:currentSwipe];
@@ -40,7 +40,7 @@
     [self addGestureRecognizer:currentPan];
     [self setLastLocation:currentRect.origin];
     [self setBasicRect:currentRect];
-   
+   */
     if (self = [super initWithFrame:currentRect])
     {
          self.currentFigureType = figureType;
@@ -242,7 +242,7 @@
     return currentColor;
 }
 
-
+/*
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self.superview bringSubviewToFront:self];
@@ -282,6 +282,7 @@
 
 }
 
+*/
 
 - (void)drawRect:(CGRect)rect
 {

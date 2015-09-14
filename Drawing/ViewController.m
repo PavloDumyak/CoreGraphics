@@ -17,16 +17,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    FigureController* FCObject = [FigureController figureControllerSingleton];
-    FCObject.generalArrayOfFigure = [[NSMutableArray alloc]initWithCapacity:10];
-    [FCObject setGeneralArray];
-    [FCObject addViewToMainDisplay:self.view];
+   // FigureController* FCObject = [FigureController figureControllerSingleton];
+   // FCObject.generalArrayOfFigure = [[NSMutableArray alloc]initWithCapacity:10];
+   // //[FCObject setGeneralArray];
+   // [FCObject addViewToMainDisplay:self.view];
     
-    
+  
    
 
 }
-
 
 
 

@@ -13,7 +13,7 @@
 		6D021AD01B9D93310069094C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D021ACF1B9D93310069094C /* Images.xcassets */; };
 		6D021AD31B9D93310069094C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D021AD11B9D93310069094C /* LaunchScreen.xib */; };
 		6D021ADF1B9D93310069094C /* DrawingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D021ADE1B9D93310069094C /* DrawingTests.m */; };
-		848857611BA31744008FC036 /* FigureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848857601BA31744008FC036 /* FigureController.m */; };
+		6D44F4CE1BA6C92B00D220CC /* FigureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D44F4CD1BA6C92B00D220CC /* FigureController.m */; };
 		848857631BA31B24008FC036 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848857621BA31B24008FC036 /* ViewController.m */; };
 		84EBFC1B1B9DCFBC0072395C /* DrawFigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBFC1A1B9DCFBC0072395C /* DrawFigure.m */; };
 /* End PBXBuildFile section */
@@ -41,8 +41,8 @@
 		6D021AD81B9D93310069094C /* DrawingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D021ADD1B9D93310069094C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D021ADE1B9D93310069094C /* DrawingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawingTests.m; sourceTree = "<group>"; };
-		8488575F1BA31744008FC036 /* FigureController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FigureController.h; sourceTree = "<group>"; };
-		848857601BA31744008FC036 /* FigureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FigureController.m; sourceTree = "<group>"; };
+		6D44F4CC1BA6C92B00D220CC /* FigureController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FigureController.h; sourceTree = "<group>"; };
+		6D44F4CD1BA6C92B00D220CC /* FigureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FigureController.m; sourceTree = "<group>"; };
 		848857621BA31B24008FC036 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		84EBFC191B9DCFBC0072395C /* DrawFigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawFigure.h; sourceTree = "<group>"; };
 		84EBFC1A1B9DCFBC0072395C /* DrawFigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawFigure.m; sourceTree = "<group>"; };
@@ -95,6 +95,8 @@
 				6D021ACF1B9D93310069094C /* Images.xcassets */,
 				6D021AD11B9D93310069094C /* LaunchScreen.xib */,
 				6D021AC21B9D93310069094C /* Supporting Files */,
+				6D44F4CC1BA6C92B00D220CC /* FigureController.h */,
+				6D44F4CD1BA6C92B00D220CC /* FigureController.m */,
 			);
 			path = Drawing;
 			sourceTree = "<group>";
@@ -106,8 +108,6 @@
 				6D021AC41B9D93310069094C /* main.m */,
 				84EBFC191B9DCFBC0072395C /* DrawFigure.h */,
 				84EBFC1A1B9DCFBC0072395C /* DrawFigure.m */,
-				8488575F1BA31744008FC036 /* FigureController.h */,
-				848857601BA31744008FC036 /* FigureController.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -232,8 +232,8 @@
 				6D021AC81B9D93310069094C /* AppDelegate.m in Sources */,
 				6D021AC51B9D93310069094C /* main.m in Sources */,
 				84EBFC1B1B9DCFBC0072395C /* DrawFigure.m in Sources */,
+				6D44F4CE1BA6C92B00D220CC /* FigureController.m in Sources */,
 				848857631BA31B24008FC036 /* ViewController.m in Sources */,
-				848857611BA31744008FC036 /* FigureController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

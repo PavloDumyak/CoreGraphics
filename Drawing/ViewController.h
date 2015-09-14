@@ -23,7 +23,7 @@
 
 @interface ViewController : UIViewController
 
-
+-(void)panHandle:(UIPanGestureRecognizer*)myPan;
 
 @end
 
